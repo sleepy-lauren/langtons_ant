@@ -78,8 +78,9 @@
             this.nudSteps = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.lblIteration = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel1 = new langtons_ant.Super_Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -88,8 +89,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.lblIteration);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.lblC19);
             this.groupBox1.Controls.Add(this.lblC18);
             this.groupBox1.Controls.Add(this.lblC17);
@@ -141,7 +142,7 @@
             this.groupBox1.MinimumSize = new System.Drawing.Size(15, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1015, 128);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // lblC19
@@ -624,7 +625,7 @@
             this.btnGoStop.Location = new System.Drawing.Point(934, 99);
             this.btnGoStop.Name = "btnGoStop";
             this.btnGoStop.Size = new System.Drawing.Size(75, 23);
-            this.btnGoStop.TabIndex = 2;
+            this.btnGoStop.TabIndex = 49;
             this.btnGoStop.Text = "Go";
             this.btnGoStop.UseVisualStyleBackColor = true;
             this.btnGoStop.Click += new System.EventHandler(this.btnGoStop_Click);
@@ -644,7 +645,7 @@
             0});
             this.nudSteps.Name = "nudSteps";
             this.nudSteps.Size = new System.Drawing.Size(120, 20);
-            this.nudSteps.TabIndex = 1;
+            this.nudSteps.TabIndex = 2;
             this.nudSteps.Value = new decimal(new int[] {
             2,
             0,
@@ -658,24 +659,13 @@
             this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Number of steps";
             // 
             // timer1
             // 
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 19);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblIteration
             // 
@@ -686,13 +676,34 @@
             this.lblIteration.Text = "Iteration:  ";
             this.lblIteration.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Location = new System.Drawing.Point(1097, 958);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 51;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(13, 99);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 47;
+            this.btnClear.Text = "Clear board";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(29, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1015, 835);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 50;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
@@ -700,11 +711,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 993);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Langton\'s Ant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -767,8 +779,9 @@
         private System.Windows.Forms.Label lblC0;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblIteration;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

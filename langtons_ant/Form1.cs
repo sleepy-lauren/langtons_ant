@@ -120,8 +120,28 @@ namespace langtons_ant
 
         private void btnGoStop_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            timer1.Start();
+            if (btnGoStop.Text == "Go")
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+                btnGoStop.Text = "Stop";
+                foreach (Control c in groupBox1.Controls)
+                {
+                    if (c.Name != "btnGoStop")
+                    { c.Enabled = false; }
+                }
+            }
+            else
+            {
+                timer1.Stop();
+                timer1.Enabled = false;
+                btnGoStop.Text = "Go";
+                foreach (Control c in groupBox1.Controls)
+                {
+                    if (c.Name != "btnGoStop")
+                    { c.Enabled = true; }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,6 +156,25 @@ namespace langtons_ant
         private void nudSteps_ValueChanged(object sender, EventArgs e)
         {
             Program.step_count = int.Parse(nudSteps.Value.ToString());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            iteration = 0;
+            Program.current_x = 50;
+            Program.current_y = 50;
+            for(int i = 0; i < 100; i++)
+            {
+                for (int j = 0; j < 100; j++)
+                {
+                    Program.grid_colors[i, j] = (Program.step_colors[0]);
+                }
+            }
         }
     }
 }
